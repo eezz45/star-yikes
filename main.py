@@ -10,19 +10,19 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 # Background
-background = pygame.image.load('C:/Users/Yanro/Documents/Python/SpaceInvader/bg.png')
+background = pygame.image.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/bg.png')
 
 #Background Sound
-mixer.music.load('C:/Users/Yanro/Documents/Python/SpaceInvader/igiling.wav')
+mixer.music.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/igiling.wav')
 mixer.music.play(-1)
 
 #Title and Icon
 pygame.display.set_caption("Space Yikers")
-icon = pygame.image.load('C:/Users/Yanro/Documents/Python/SpaceInvader/alphabet.png')
+icon = pygame.image.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/alphabet.png')
 pygame.display.set_icon(icon)
 
 #Player
-playerImg =pygame.image.load('C:/Users/Yanro/Documents/Python/SpaceInvader/user.png')
+playerImg =pygame.image.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/user.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
@@ -37,7 +37,7 @@ enemyY_change = []
 num_of_enemies = 20
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('C:/Users/Yanro/Documents/Python/SpaceInvader/enemy.png'))
+    enemyImg.append(pygame.image.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/enemy.png'))
     enemyX.append(random.randint(20, 736))
     enemyY.append(random.randint (20, 150))
     enemyX_change.append(1)
@@ -47,7 +47,7 @@ for i in range(num_of_enemies):
 
 #Ready - You Can't see the bullet on the screen
 #Fire - The bullet is currently moving
-bulletImg =pygame.image.load('C:/Users/Yanro/Documents/Python/SpaceInvader/bullets.png')
+bulletImg =pygame.image.load('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/bullets.png')
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
@@ -116,7 +116,7 @@ while running:
             #     playerY_change = 1
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
-                    bullet_sound = mixer.Sound('C:/Users/Yanro/Documents/Python/SpaceInvader/skadoosh.wav')
+                    bullet_sound = mixer.Sound('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/skadoosh.wav')
                     bullet_sound.play()
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
@@ -163,7 +163,7 @@ while running:
     
         collision = isCollision (enemyX[i],enemyY[i],bulletX,bulletY)
         if collision:
-            collision_Sound = mixer.Sound('C:/Users/Yanro/Documents/Python/SpaceInvader/shame.wav')
+            collision_Sound = mixer.Sound('C:/Users/Yanro/Documents/Python/StarYikes/star-yikes/shame.wav')
             collision_Sound.play()
             bulletY = 480
             bullet_state = "ready"
